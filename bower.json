@@ -1,0 +1,21 @@
+{
+  "name": "soundglomerate",
+  "authors": [
+    "Muhsin Abdul-Musawwir moose.techuy@gmail.com"
+  ],
+  "description": "Find music events in your area.",
+  "main": "app/app.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "www.soundglom.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
