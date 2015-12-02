@@ -5,15 +5,29 @@ var soundglomerate = angular.module('soundglomerate', [
   'ui.router'
   ]);
 
-soundglomerate.config(function($stateProvider){
+soundglomerate
+.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+  $urlRouterProvider.otherwise("/home");
+
   $stateProvider
-  .state('app', { 
-      url: '',
-      template: '<ui-view/>'
+  .state('app', {
+    url: '',
+    template: '<ui-view/>'
   })
-  .state('app.home', {
-    url: '/',
+  .state('home', {
+    url: '/home',
     templateUrl: 'js/home/home.html',
-    controller: 'js/home/home.js'
+    controller: 'HomeCtrl'
   })
-});
+
+  $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+  });
+})
+.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+    
+      
+}]);
